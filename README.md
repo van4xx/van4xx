@@ -33,10 +33,23 @@
 ![Git](https://img.shields.io/badge/-Git-black?style=flat-square&logo=git)
 
 ## 📊 GitHub Stats
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=van4xx&show_icons=true&theme=matrix)
+
+<div align="center">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=van4xx&show_icons=true&theme=matrix&include_all_commits=true&count_private=true"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=van4xx&layout=compact&langs_count=8&theme=matrix"/>
+</div>
 
 ## 🔥 Streak Stats
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=van4xx&theme=matrix)](https://git.io/streak-stats)
+<div align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=van4xx&theme=matrix&hide_border=true" />
+  <br/>
+  <img src="https://github-profile-trophy.vercel.app/?username=van4xx&theme=matrix&no-frame=true&column=7" />
+</div>
+
+## 📈 Contribution Graph
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=van4xx&theme=matrix&bg_color=000000&hide_border=true" width="100%"/>
+</div>
 
 ## 📫 Connect With Me
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-black?style=flat-square&logo=linkedin)](https://linkedin.com/in/van4xx)
@@ -45,5 +58,6 @@
 [![Website](https://img.shields.io/badge/-Website-black?style=flat-square&logo=google-chrome)](https://webitlab.ru)
 
 <div align="center">
-    <img src="https://komarev.com/ghpvc/?username=van4xx&color=green" alt="Profile views">
+    <img src="https://komarev.com/ghpvc/?username=van4xx&color=green" alt="Profile views"/>
+    <img src="https://img.shields.io/github/followers/van4xx?label=Followers&style=social" alt="GitHub followers"/>
 </div> 
