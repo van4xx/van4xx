@@ -1,110 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:#000000;display:block;z-index:1;position:relative" width="1084" height="322" preserveAspectRatio="xMidYMid" viewBox="0 0 1084 322">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:#0a0f18;display:block;z-index:1;position:relative" width="1084" height="322" preserveAspectRatio="xMidYMid" viewBox="0 0 1084 322">
 <style type="text/css">
-  @keyframes matrix-1 {
-    from { opacity: 0; transform: translateY(-100px); }
+  @keyframes pulse {
+    0% { opacity: 0.4; }
     50% { opacity: 1; }
-    to { opacity: 0; transform: translateY(100px); }
+    100% { opacity: 0.4; }
   }
-  @keyframes matrix-2 {
-    from { opacity: 0; transform: translateY(-120px); }
-    50% { opacity: 0.8; }
-    to { opacity: 0; transform: translateY(120px); }
-  }
-  @keyframes matrix-3 {
-    from { opacity: 0; transform: translateY(-80px); }
-    50% { opacity: 0.6; }
-    to { opacity: 0; transform: translateY(80px); }
+  @keyframes flow {
+    0% { stroke-dashoffset: 1000; }
+    100% { stroke-dashoffset: 0; }
   }
   @keyframes glow {
-    0% { filter: brightness(100%) drop-shadow(0 0 2px #0f0); }
-    50% { filter: brightness(200%) drop-shadow(0 0 12px #0f0); }
-    100% { filter: brightness(100%) drop-shadow(0 0 2px #0f0); }
+    0% { filter: drop-shadow(0 0 2px #4f8fea); }
+    50% { filter: drop-shadow(0 0 8px #4f8fea); }
+    100% { filter: drop-shadow(0 0 2px #4f8fea); }
   }
-  .symbol {
-    font-family: 'Courier New', monospace;
+  .tech-text {
+    font-family: 'Monaco', monospace;
     font-weight: bold;
+    fill: #4f8fea;
+    font-size: 16px;
   }
-  .small { font-size: 14px; }
-  .medium { font-size: 20px; }
-  .large { font-size: 28px; }
-  .green { fill: #00ff00; animation: matrix-1 4s infinite, glow 3s infinite; }
-  .bright-green { fill: #50ff50; animation: matrix-2 3s infinite, glow 2s infinite; }
-  .neon-green { fill: #00ff99; animation: matrix-3 2s infinite, glow 1.5s infinite; }
+  .flow-line {
+    stroke: #4f8fea;
+    stroke-width: 2;
+    stroke-dasharray: 10, 5;
+    animation: flow 30s linear infinite;
+  }
+  .node {
+    fill: #0a0f18;
+    stroke: #4f8fea;
+    stroke-width: 2;
+    animation: pulse 3s infinite;
+  }
+  .glow {
+    animation: glow 2s infinite;
+  }
 </style>
 
 <defs>
-  <radialGradient id="matrix-gradient" cx="50%" cy="50%" r="70%" fx="50%" fy="50%">
-    <stop offset="0%" style="stop-color:#00ff00;stop-opacity:0.4"/>
-    <stop offset="70%" style="stop-color:#00aa00;stop-opacity:0.2"/>
-    <stop offset="100%" style="stop-color:#000000;stop-opacity:0"/>
-  </radialGradient>
+  <linearGradient id="tech-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#0a0f18;stop-opacity:1"/>
+    <stop offset="50%" style="stop-color:#1a2535;stop-opacity:1"/>
+    <stop offset="100%" style="stop-color:#0a0f18;stop-opacity:1"/>
+  </linearGradient>
+  <filter id="glow-filter">
+    <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+    <feMerge>
+      <feMergeNode in="coloredBlur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
 </defs>
 
-<rect width="100%" height="100%" fill="url(#matrix-gradient)"/>
+<rect width="100%" height="100%" fill="url(#tech-gradient)"/>
 
-<g>
-  <!-- Column 1 -->
-  <text class="symbol large green" x="40" y="40">1 0 1</text>
-  <text class="symbol medium bright-green" x="40" y="80">0 1 1 0</text>
-  <text class="symbol small neon-green" x="40" y="120">1 1 0 1 0</text>
-  <text class="symbol large green" x="40" y="160">0xDEAD</text>
-  <text class="symbol medium bright-green" x="40" y="200">1 0 1 1</text>
-  <text class="symbol small neon-green" x="40" y="240">0 1 0 1 0</text>
-  <text class="symbol large green" x="40" y="280">0xC0DE</text>
+<!-- Central Hub -->
+<circle class="node glow" cx="542" cy="161" r="50"/>
+<text class="tech-text glow" x="510" y="165">DEVELOPER</text>
 
-  <!-- Column 2 -->
-  <text class="symbol small neon-green" x="200" y="40">0 1 1 0 1</text>
-  <text class="symbol large green" x="200" y="80">1 0 0</text>
-  <text class="symbol medium bright-green" x="200" y="120">0xBEEF</text>
-  <text class="symbol small neon-green" x="200" y="160">1 1 0 1 1</text>
-  <text class="symbol large green" x="200" y="200">0 1 0</text>
-  <text class="symbol medium bright-green" x="200" y="240">0xHACK</text>
-  <text class="symbol small neon-green" x="200" y="280">1 0 1 0 1</text>
+<!-- Frontend Node -->
+<circle class="node" cx="342" cy="81" r="40"/>
+<text class="tech-text" x="310" y="85">FRONTEND</text>
 
-  <!-- Column 3 -->
-  <text class="symbol medium bright-green" x="360" y="40">0xF00D</text>
-  <text class="symbol small neon-green" x="360" y="80">1 0 1 1 0</text>
-  <text class="symbol large green" x="360" y="120">0 1 1</text>
-  <text class="symbol medium bright-green" x="360" y="160">0xB00B</text>
-  <text class="symbol small neon-green" x="360" y="200">0 1 1 0 1</text>
-  <text class="symbol large green" x="360" y="240">1 0 0</text>
-  <text class="symbol medium bright-green" x="360" y="280">0xCAFE</text>
+<!-- Backend Node -->
+<circle class="node" cx="742" cy="81" r="40"/>
+<text class="tech-text" x="715" y="85">BACKEND</text>
 
-  <!-- Column 4 -->
-  <text class="symbol large green" x="520" y="40">1 1 0</text>
-  <text class="symbol medium bright-green" x="520" y="80">0xROOT</text>
-  <text class="symbol small neon-green" x="520" y="120">0 1 1 0 1</text>
-  <text class="symbol large green" x="520" y="160">1 0 1</text>
-  <text class="symbol medium bright-green" x="520" y="200">0xNULL</text>
-  <text class="symbol small neon-green" x="520" y="240">1 1 0 1 0</text>
-  <text class="symbol large green" x="520" y="280">0 0 1</text>
+<!-- Database Node -->
+<circle class="node" cx="342" cy="241" r="40"/>
+<text class="tech-text" x="310" y="245">DATABASE</text>
 
-  <!-- Column 5 -->
-  <text class="symbol small neon-green" x="680" y="40">1 0 1 1 0</text>
-  <text class="symbol large green" x="680" y="80">0xVOID</text>
-  <text class="symbol medium bright-green" x="680" y="120">0 1 1 0</text>
-  <text class="symbol small neon-green" x="680" y="160">1 1 0 1 1</text>
-  <text class="symbol large green" x="680" y="200">0xEXEC</text>
-  <text class="symbol medium bright-green" x="680" y="240">1 0 1 0</text>
-  <text class="symbol small neon-green" x="680" y="280">0 1 1 0 1</text>
+<!-- Cloud Node -->
+<circle class="node" cx="742" cy="241" r="40"/>
+<text class="tech-text" x="722" y="245">CLOUD</text>
 
-  <!-- Column 6 -->
-  <text class="symbol medium bright-green" x="840" y="40">0xSYS</text>
-  <text class="symbol small neon-green" x="840" y="80">1 1 0 1 0</text>
-  <text class="symbol large green" x="840" y="120">0 1 1</text>
-  <text class="symbol medium bright-green" x="840" y="160">0xINIT</text>
-  <text class="symbol small neon-green" x="840" y="200">1 0 1 1 0</text>
-  <text class="symbol large green" x="840" y="240">1 1 0</text>
-  <text class="symbol medium bright-green" x="840" y="280">0xEND</text>
+<!-- Connection Lines -->
+<path class="flow-line" d="M 542 111 L 542 161" filter="url(#glow-filter)"/>
+<path class="flow-line" d="M 542 161 L 542 211" filter="url(#glow-filter)"/>
+<path class="flow-line" d="M 492 161 L 382 161" filter="url(#glow-filter)"/>
+<path class="flow-line" d="M 592 161 L 702 161" filter="url(#glow-filter)"/>
 
-  <!-- Column 7 -->
-  <text class="symbol large green" x="1000" y="40">1 0 1</text>
-  <text class="symbol medium bright-green" x="1000" y="80">0xCORE</text>
-  <text class="symbol small neon-green" x="1000" y="120">0 1 1 0 1</text>
-  <text class="symbol large green" x="1000" y="160">1 1 0</text>
-  <text class="symbol medium bright-green" x="1000" y="200">0xBASE</text>
-  <text class="symbol small neon-green" x="1000" y="240">1 0 1 1 0</text>
-  <text class="symbol large green" x="1000" y="280">0 1 1</text>
+<!-- Tech Stack Labels -->
+<g class="glow">
+  <text class="tech-text" x="300" y="40">React • Next.js</text>
+  <text class="tech-text" x="680" y="40">Node.js • Nest.js</text>
+  <text class="tech-text" x="290" y="280">PostgreSQL • Redis</text>
+  <text class="tech-text" x="700" y="280">AWS • Docker</text>
+</g>
+
+<!-- Code Snippets -->
+<g class="glow">
+  <text class="tech-text" x="50" y="120">const App = () => {</text>
+  <text class="tech-text" x="70" y="140">  return <Component /></text>
+  <text class="tech-text" x="50" y="160">}</text>
+
+  <text class="tech-text" x="850" y="120">async function main() {</text>
+  <text class="tech-text" x="870" y="140">  await server.start()</text>
+  <text class="tech-text" x="850" y="160">}</text>
+</g>
+
+<!-- Connecting Dots -->
+<g class="glow">
+  <circle class="node" cx="442" cy="121" r="3"/>
+  <circle class="node" cx="442" cy="161" r="3"/>
+  <circle class="node" cx="442" cy="201" r="3"/>
+  <circle class="node" cx="642" cy="121" r="3"/>
+  <circle class="node" cx="642" cy="161" r="3"/>
+  <circle class="node" cx="642" cy="201" r="3"/>
 </g>
 </svg> 
