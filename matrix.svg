@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:#000000;display:block;z-index:1;position:relative" width="1084" height="322" preserveAspectRatio="xMidYMid" viewBox="0 0 1084 322">
+<style type="text/css">
+  @keyframes matrix-1 {
+    from { opacity: 1; transform: translateY(-20px); }
+    to { opacity: 0; transform: translateY(20px); }
+  }
+  @keyframes matrix-2 {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(15px); }
+  }
+  .symbol {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .green { fill: #00ff00; }
+  .bright-green { fill: #50ff50; }
+  .matrix-1 { animation: matrix-1 2s infinite; }
+  .matrix-2 { animation: matrix-2 1.5s infinite; }
+</style>
+
+<g>
+  <!-- First Column -->
+  <text class="symbol green matrix-1" x="20" y="20">1 0 1</text>
+  <text class="symbol bright-green matrix-2" x="20" y="50">ハ チ</text>
+  <text class="symbol green matrix-1" x="20" y="80">0 1 0</text>
+  <text class="symbol bright-green matrix-2" x="20" y="110">⚡ ☢</text>
+  <text class="symbol green matrix-1" x="20" y="140">1 1 0</text>
+
+  <!-- Second Column -->
+  <text class="symbol bright-green matrix-2" x="120" y="40">マ ト</text>
+  <text class="symbol green matrix-1" x="120" y="70">0 1 1</text>
+  <text class="symbol bright-green matrix-2" x="120" y="100">⌘ ㉿</text>
+  <text class="symbol green matrix-1" x="120" y="130">1 0 0</text>
+  <text class="symbol bright-green matrix-2" x="120" y="160">リ ク</text>
+
+  <!-- Third Column -->
+  <text class="symbol green matrix-1" x="220" y="30">0 1 1</text>
+  <text class="symbol bright-green matrix-2" x="220" y="60">サ キ</text>
+  <text class="symbol green matrix-1" x="220" y="90">1 0 1</text>
+  <text class="symbol bright-green matrix-2" x="220" y="120">⚔ ☠</text>
+  <text class="symbol green matrix-1" x="220" y="150">0 0 1</text>
+
+  <!-- Fourth Column -->
+  <text class="symbol bright-green matrix-2" x="320" y="20">ミ ラ</text>
+  <text class="symbol green matrix-1" x="320" y="50">1 1 0</text>
+  <text class="symbol bright-green matrix-2" x="320" y="80">カ ネ</text>
+  <text class="symbol green matrix-1" x="320" y="110">0 1 1</text>
+  <text class="symbol bright-green matrix-2" x="320" y="140">⚡ ⌘</text>
+
+  <!-- Fifth Column -->
+  <text class="symbol green matrix-1" x="420" y="40">1 0 0</text>
+  <text class="symbol bright-green matrix-2" x="420" y="70">ツ メ</text>
+  <text class="symbol green matrix-1" x="420" y="100">0 1 0</text>
+  <text class="symbol bright-green matrix-2" x="420" y="130">㉿ ☢</text>
+  <text class="symbol green matrix-1" x="420" y="160">1 1 1</text>
+</g>
+</svg> 
